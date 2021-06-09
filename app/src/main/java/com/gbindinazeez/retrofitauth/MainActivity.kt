@@ -17,10 +17,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun fetcgPosts(){
+    fun fetchPosts(){
 
         // Pass the token as parameter
-        apiClient.getApiService().fetchPosts(token = "Bearer ${sessionManager.fetchAuthToken()}")
+        apiClient.getApiService(this).fetchPosts()
             .enqueue(object : Callback<PostsResponse>{
                 override fun onResponse(
                     call: Call<PostsResponse>,
