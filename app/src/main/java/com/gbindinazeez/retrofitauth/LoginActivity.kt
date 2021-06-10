@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
         apiClient = ApiClient()
         sessionManager = SessionManager(this)
 
-        apiClient.getApiService().login(LoginRequest(email = "s@sample.com", password = "mypassword"))
+        apiClient.getApiService(this).login(LoginRequest(email = "s@sample.com", password = "mypassword"))
             .enqueue(object : retrofit2.Callback<LoginResponse>{
                 override fun onResponse(
                     call: Call<LoginResponse>,
